@@ -1,8 +1,10 @@
-# AVIT ZSH Theme
+# avit-venv ZSH Themee
+
+export VIRTUAL_ENV_DISABLE_PROMPT=yes
 
 PROMPT='
 $(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
-%{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
+%{$fg[$CARETCOLOR]%}$(_virtualenv_name)▶%{$resetcolor%} '
 
 PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
 
@@ -44,6 +46,13 @@ function _ruby_version() {
     echo "%{$fg[grey]%}$(rvm_prompt_info)%{$reset_color%}"
   elif {echo $fpath | grep -q "plugins/rbenv"}; then
     echo "%{$fg[grey]%}$(rbenv_prompt_info)%{$reset_color%}"
+  fi
+}
+
+function _virtualenv_name() {
+  if [[ -n $VIRTUAL_ENV ]] ; then
+    local venv=$(basename $VIRTUAL_ENV)
+    echo "(${venv})"
   fi
 }
 
