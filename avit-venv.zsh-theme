@@ -1,4 +1,4 @@
-# AVIT ZSH Theme
+# avit-venv ZSH Themee
 
 export VIRTUAL_ENV_DISABLE_PROMPT=yes
 
