@@ -1,4 +1,6 @@
-# avit-venv ZSH Theme
+# avit-venv ZSH Themee
+
+export VIRTUAL_ENV_DISABLE_PROMPT=yes
 
 PROMPT='
 $(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
