@@ -48,10 +48,7 @@ function _ruby_version() {
 }
 
 function _virtualenv_name() {
-  if [[ -n $VIRTUAL_ENV ]] ; then
-    local venv=$(basename $VIRTUAL_ENV)
-    echo "(${venv})"
-  fi
+  echo (test)
 }
 
 # Determine the time since last commit. If branch is clean,
